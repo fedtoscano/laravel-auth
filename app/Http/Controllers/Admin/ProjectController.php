@@ -12,7 +12,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return view("admin.projects.index", compact("projects"));
     }
 
     /**
@@ -21,6 +21,7 @@ class ProjectController extends Controller
     public function create()
     {
         //
+        return view("admin.projects.create-new-project");
     }
 
     /**
@@ -29,6 +30,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**

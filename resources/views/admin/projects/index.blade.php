@@ -29,7 +29,12 @@
                 <td>
                     <a href="{{Route("admin.projects.show", ["project" => $project])}}" class="btn btn-primary">View</a>
                     <a href="{{Route("admin.projects.edit", ["project" => $project])}}" class="btn btn-warning">Edit</a>
-                    <a>Delete</a>
+                    <form action="{{Route("admin.projects.destroy", ["project" => $project])}}" method="POST">
+                        @method("DELETE")
+                        @csrf
+                        <input type="submit" class="btn btn-danger" value="Delete"></input>
+                    </form>
+
                 </td>
             </tr>
             @endforeach

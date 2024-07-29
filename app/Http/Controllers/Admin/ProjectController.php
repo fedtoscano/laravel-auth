@@ -55,10 +55,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
 
         return view("admin.projects.edit", compact("project"));
-
     }
 
     /**
@@ -75,8 +73,9 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->Route("admin.projects.index");
     }
 }

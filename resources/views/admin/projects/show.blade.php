@@ -42,6 +42,4 @@
         <a href="{{Route("admin.projects.index")}}" class="btn btn-primary">Home</a>
     </div>
 </div>
-
-    {{-- @dump($project) --}}
 @endsection

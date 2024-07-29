@@ -30,7 +30,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li>
+                            <a href="{{Route("admin.projects.create")}}">Create New project</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

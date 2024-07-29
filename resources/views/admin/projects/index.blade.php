@@ -22,12 +22,8 @@
                 <td>{{$project->name}}</td>
                 <td>{{$project->client}}</td>
                 <td>
-                    @php
-                    $techStack = json_decode($project->tech_stack);
-                    @endphp
-                        @foreach ($techStack as $singleTechStack)
-                            <span>{{$singleTechStack}}</span>
-                        @endforeach</td>
+                    {{$project->tech_stack}}
+                </td>
                 <td>{{$project->start_date}}</td>
                 <td>{{($project->status) ? "In corso" : "Completato"}}</td>
                 <td>

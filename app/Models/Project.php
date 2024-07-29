@@ -10,4 +10,8 @@ class Project extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $fillables = [
+        //insert fillables here
+    ];
 }

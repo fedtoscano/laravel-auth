@@ -31,9 +31,9 @@
                 <td>{{$project->start_date}}</td>
                 <td>{{($project->status) ? "In corso" : "Completato"}}</td>
                 <td>
-                    <button>View</button>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <a href="{{Route("admin.projects.show", ["project" => $project])}}" class="btn btn-primary">View</a>
+                    <a>Edit</a>
+                    <a>Delete</a>
                 </td>
             </tr>
             @endforeach

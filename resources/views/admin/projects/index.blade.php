@@ -28,7 +28,7 @@
                 <td>{{($project->status) ? "In corso" : "Completato"}}</td>
                 <td>
                     <a href="{{Route("admin.projects.show", ["project" => $project])}}" class="btn btn-primary">View</a>
-                    <a>Edit</a>
+                    <a href="{{Route("admin.projects.edit", ["project" => $project])}}" class="btn btn-warning">Edit</a>
                     <a>Delete</a>
                 </td>
             </tr>

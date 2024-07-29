@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EditProjectRequest;
 use App\Http\Requests\StoreProjectRequest;
 use Illuminate\Http\Request;
 use App\Models\Project;
@@ -26,7 +27,7 @@ class ProjectController extends Controller
     {
         //
         $project = new Project();
-        return view("admin.projects.create-or-edit", compact("project"));
+        return view("admin.projects.create", compact("project"));
     }
 
     /**
@@ -52,17 +53,23 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Project $project)
     {
         //
+
+        return view("admin.projects.edit", compact("project"));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Project $project, EditProjectRequest $request)
     {
         //
+        $data = $request->validated();
+        $project->update($data);
+        return redirect()->route("admin.projects.show", compact("project"));
     }
 
     /**

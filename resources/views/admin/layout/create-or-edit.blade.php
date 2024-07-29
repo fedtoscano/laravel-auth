@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-            <form action="{{Route("admin.projects.store")}}" method="POST">
-                @method("POST")
+            <form action="@yield("form-action")" method="POST">
+                @yield("form-method")
                 @csrf
 
                 <div class="mb-3">
@@ -107,7 +107,7 @@
                     </div>
                     @enderror
                 </div>
-                <input type="submit" class="btn btn-primary" value="Create a new project"></input>
+                <input type="submit" class="btn btn-primary" value="@yield("input-value-text")"></input>
             </form>
         </div>
     </div>
